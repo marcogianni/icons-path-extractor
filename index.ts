@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync, unlinkSync } from "fs";
-import { camelCase } from "lodash";
+import { camelCase, upperFirst } from "lodash";
 
 const icons = [
   "account-box",
@@ -19,7 +19,7 @@ const icons = [
   "bottle-soda-classic",
   "bottle-wine",
   "bowl-mix-outline",
-  "bull-horn",
+  "bullhorn",
   "calendar-outline",
   "calendar-today",
   "car-outline",
@@ -48,7 +48,7 @@ const icons = [
   "dishwasher",
   "dog-side",
   "email-search-outline",
-  "eye-off",
+  "eye-off-outline",
   "eye-outline",
   "face-man",
   "face-woman",
@@ -123,7 +123,7 @@ const icons = [
   "wrench-outline",
 ];
 
-main(icons);
+main(icons.sort());
 
 function main(icons: string[]) {
   const fileToWrite = "./output.ts";
@@ -142,12 +142,11 @@ function main(icons: string[]) {
         .replace(/<path d="/, "")
         .replace(/" \/>/, "");
 
-      const output = `export const ${camelCase(
-        icon
-      )} = '${extractedString}';\n`;
+      const camelCasedIcon = upperFirst(camelCase(icon));
+      const output = `export const mdi${camelCasedIcon} = '${extractedString}';\n`;
       writeFileSync(fileToWrite, output, { flag: "a" });
 
-      return { [`mdi${camelCase(icon)}`]: extractedString };
+      return { [`mdi${camelCasedIcon}`]: extractedString };
     } catch (error) {
       console.error(`File not found: ${icon}`);
       return null;
