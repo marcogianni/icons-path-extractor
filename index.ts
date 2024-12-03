@@ -121,6 +121,17 @@ const icons = [
   "whatsapp",
   "white-balance-sunny",
   "wrench-outline",
+  "menu-down",
+  "dots-horizontal",
+  "dots-vertical",
+  "home-city-outline",
+  "map-outline",
+  "chevron-double-right",
+  "chevron-double-left",
+  "filter-variant",
+  "pencil-outline",
+  "drag-vertical",
+  "delete-outline",
 ];
 
 main(icons.sort());
