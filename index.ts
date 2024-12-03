@@ -132,6 +132,23 @@ const icons = [
   "pencil-outline",
   "drag-vertical",
   "delete-outline",
+  "information-outline",
+  "timer-sand",
+  "calendar-month-outline",
+  "inbox-outline",
+  "autorenew",
+  "lock",
+  "wifi",
+  "tools",
+  "handshake-outline",
+  "heart",
+  "vacuum",
+  "smoking-off",
+  "sprout",
+  "volume-mute",
+  "door",
+  "account",
+  "share-variant-outline",
 ];
 
 main(icons.sort());
